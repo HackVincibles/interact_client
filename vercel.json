@@ -1,8 +1,62 @@
 {
+  "projectName": "interact-client",
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "public": true,
+  "regions": ["iad1"],
+  "env": {
+    "NEXT_PUBLIC_BASE_URL": {
+      "description": "Base URL for client application",
+      "required": true
+    },
+    "NEXT_PUBLIC_SERVER_URL": {
+      "description": "Backend server URL (Render)",
+      "required": true,
+      "example": "https://your-server.onrender.com"
+    },
+    "NEXT_PUBLIC_VAPI_WEB_TOKEN": {
+      "description": "Vapi web token for voice AI",
+      "required": true
+    },
+    "NEXT_PUBLIC_VAPI_ASSISTANT_ID": {
+      "description": "Default Vapi assistant ID",
+      "required": true
+    },
+    "NEXT_PUBLIC_VAPI_INTERVIEW_ASSISTANT_ID": {
+      "description": "Interview mode Vapi assistant ID",
+      "required": true
+    },
+    "NEXT_PUBLIC_VAPI_TECH_HELPER_ASSISTANT_ID": {
+      "description": "Tech helper Vapi assistant ID",
+      "required": true
+    },
+    "NEXT_PUBLIC_VAPI_GD_ASSISTANT_ID": {
+      "description": "Group discussion Vapi assistant ID",
+      "required": true
+    },
+    "GOOGLE_GENERATIVE_AI_API_KEY": {
+      "description": "Google Gemini API key",
+      "required": true
+    },
+    "NEXT_PUBLIC_GOOGLE_CLIENT_ID": {
+      "description": "Google OAuth client ID",
+      "required": true
+    },
+    "NEXT_PUBLIC_ZOOM_SDK_KEY": {
+      "description": "Zoom SDK key",
+      "required": false
+    },
+    "NEXT_PUBLIC_VIDEOSDK_TOKEN": {
+      "description": "VideoSDK token",
+      "required": false
+    }
+  },
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://interact-server-sqnz.onrender.com/api/:path*"
+      "destination": "${NEXT_PUBLIC_SERVER_URL}/api/:path*"
     }
   ]
 }
