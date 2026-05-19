@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://interact-server-sqnz.onrender.com/api/:path*"
+    }
+  ]
+}
